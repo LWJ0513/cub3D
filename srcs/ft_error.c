@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:58:05 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/21 18:12:08 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/21 21:28:53 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,34 @@ void	ft_free(char **list)
 	while (list[++i])
 		free(list[i]);
 	free(list);
+}
+
+int	is_two_word(char *line)
+{
+	char	**tmp;
+	int		i;
+
+	i = 0;
+	tmp = ft_split(line, ' ');
+	while (tmp[i])
+		i++;
+	ft_free(tmp);
+	if (i != 2)
+		return (0);
+	return (1);
+}
+
+int	is_three_word(char *line)
+{
+	char	**tmp;
+	int		i;
+
+	i = 0;
+	tmp = ft_split(line, ',');
+	while (tmp[i])
+		i++;
+	ft_free(tmp);
+	if (i != 3)
+		return (0);
+	return (1);
 }

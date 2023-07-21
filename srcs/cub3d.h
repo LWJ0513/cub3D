@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/21 18:14:09 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/21 20:29:26 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ typedef struct s_parsing {
 //error
 void	ft_error(char *msg);
 void	ft_free(char **list);
+int		is_two_word(char *line);
+int		is_three_word(char *line);
 
 //init_data
 int		check_file(char *file, t_parsing *parse);
@@ -74,8 +76,5 @@ int		alloc_data(t_data *data, t_parsing *parse);
 //check_identifier
 int		check_identifier(t_data *data, t_parsing *parse);
 
-//set_identifier
-int		set_image();
-int		set_color();
 
 #endif
