@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:48 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/21 20:39:15 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/21 21:50:10 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ int main(int argc, char **argv)
 	t_parsing	parse;
 
 	check_file_n_init(argc, argv, &data, &parse);
-	check_identifier(&data, &parse);
+	if (!check_identifier(&data, &parse))
+		ft_error("invalid identified");
 	data.mlx = mlx_init();
 	//맵 유효성 검사
+	
 	//모서리 검사
 }
