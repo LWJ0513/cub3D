@@ -1,4 +1,4 @@
-CC = cc
+CC = cc -g
 CFLAGS = -Wall -Werror -Wextra
 OPTION = -L./mlx -lmlx -framework OpenGL -framework AppKit
 NAME = cub3D

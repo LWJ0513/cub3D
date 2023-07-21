@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:48 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/21 21:50:10 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/22 02:35:05 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_file_n_init(int argc, char **argv, t_data *data, t_parsing *parse)
 	if (argc != 2)
 		ft_error("invalid argument");
 	if (!check_file(argv[1], parse))
-		ft_error("invalid file extension");
+		ft_error("fail open");
 	if (!init_parse(parse))
 		ft_error("fail init");
 	init_data(data);
@@ -34,6 +34,8 @@ int main(int argc, char **argv)
 	if (!check_identifier(&data, &parse))
 		ft_error("invalid identified");
 	data.mlx = mlx_init();
+	if (!check_image(&data, &parse))
+		ft_error("fail load to images");
 	//맵 유효성 검사
 	
 	//모서리 검사

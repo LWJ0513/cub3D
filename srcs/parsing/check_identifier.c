@@ -6,11 +6,32 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 23:39:46 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/21 21:51:19 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/22 02:37:23 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+int	check_image(t_data *data, t_parsing *parse)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 4)
+	{
+		printf("image_path: %s\n", parse->image_path[i]);
+		data->images[i].img = mlx_xpm_file_to_image(data->mlx, \
+		parse->image_path[i], &data->images[i].width, &data->images[i].heigth);
+		if (!data->images[i].img)
+			return (0);
+		data->images[i].addr = (int *)mlx_get_data_addr(data->images[i].img, \
+		&data->images[i].bpp, &data->images[i].line_length, \
+		&data->images[i].endian);
+		if (!data->images[i].addr)
+			return (0);
+	}
+	return (1);
+}
 
 int	is_identifier(char **identifier, t_parsing *parse)
 {

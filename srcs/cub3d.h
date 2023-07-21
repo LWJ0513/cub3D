@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/21 20:29:26 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/22 02:01:45 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	init_data(t_data *data);
 int		alloc_data(t_data *data, t_parsing *parse);
 
 //check_identifier
+int		check_image(t_data *data, t_parsing *parse);
 int		check_identifier(t_data *data, t_parsing *parse);
 
 
