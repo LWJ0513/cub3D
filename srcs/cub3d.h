@@ -6,19 +6,26 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/20 23:56:25 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/21 18:14:09 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
-#define CUB3D_H
+# define CUB3D_H
 
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+
+# define NO 0
+# define SO 1
+# define WE 2
+# define EA 3
+# define F 4
+# define C 5 
 
 typedef struct s_image {
 	int		width;
@@ -56,6 +63,7 @@ typedef struct s_parsing {
 
 //error
 void	ft_error(char *msg);
+void	ft_free(char **list);
 
 //init_data
 int		check_file(char *file, t_parsing *parse);
@@ -65,5 +73,9 @@ int		alloc_data(t_data *data, t_parsing *parse);
 
 //check_identifier
 int		check_identifier(t_data *data, t_parsing *parse);
+
+//set_identifier
+int		set_image();
+int		set_color();
 
 #endif

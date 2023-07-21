@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   set_identifier.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 21:58:05 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/21 18:12:08 by sooyang          ###   ########.fr       */
+/*   Created: 2023/07/21 18:07:09 by sooyang           #+#    #+#             */
+/*   Updated: 2023/07/21 18:08:58 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
-void	ft_error(char *msg)
+int	set_image()
 {
-	ft_putstr_fd("Error) ", 2);
-	ft_putstr_fd(msg, 2);
-	ft_putstr_fd("\n", 2);
-	exit(1);
+	
 }
 
-void	ft_free(char **list)
+int	set_color()
 {
-	int	i;
-
-	i = -1;
-	while (list[++i])
-		free(list[i]);
-	free(list);
+	
 }

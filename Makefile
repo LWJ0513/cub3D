@@ -7,7 +7,10 @@ RM = rm -rf
 MANDATORY = $(addprefix srcs/, $(SRCS))
 
 SRCS =  \
-	main.c
+	main.c \
+	ft_error.c \
+	parsing/init_data.c \
+	parsing/check_identifier.c \
 
 OBJS = $(MANDATORY:c=o)
 
