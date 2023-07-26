@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/22 02:01:45 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/26 17:25:07 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ void	ft_free(char **list);
 int		is_two_word(char *line);
 int		is_three_word(char *line);
 
+//parsing
+void	arg_n_init(int argc, char **argv, t_data *data, t_parsing *parse);
+void	parsing(int argc, char **argv, t_data *data, t_parsing *parse);
+
 //init_data
 int		check_file(char *file, t_parsing *parse);
 int		init_parse(t_parsing *parse);
@@ -77,5 +81,7 @@ int		alloc_data(t_data *data, t_parsing *parse);
 int		check_image(t_data *data, t_parsing *parse);
 int		check_identifier(t_data *data, t_parsing *parse);
 
+//validate_map
+int		validate_map(t_data *data, t_parsing *parsing);
 
 #endif
