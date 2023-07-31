@@ -13,6 +13,7 @@ SRCS =  \
 	parsing/init_data.c \
 	parsing/check_identifier.c \
 	parsing/validate_map.c \
+	parsing/set_map.c \
 
 OBJS = $(MANDATORY:c=o)
 

@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/31 17:50:37 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/31 21:15:24 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,8 @@ int		check_identifier(t_data *data, t_parsing *parse);
 
 //validate_map
 int		validate_map(t_data *data, t_parsing *parsing);
+
+//set_map
+int		set_map(t_data *data, t_parsing *parse);
 
 #endif
