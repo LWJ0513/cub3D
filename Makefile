@@ -8,7 +8,7 @@ MANDATORY = $(addprefix srcs/, $(SRCS))
 
 SRCS =  \
 	main.c \
-	ft_error.c \
+	parsing/ft_error.c \
 	parsing/parsing.c \
 	parsing/init_data.c \
 	parsing/check_identifier.c \
