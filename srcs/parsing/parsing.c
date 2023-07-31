@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:30:40 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/26 21:30:36 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/31 18:41:05 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ void	parsing(int argc, char **argv, t_data *data, t_parsing *parse)
 		ft_error("fail to load images");
 	if (!validate_map(data, parse))
 		ft_error("fail to load map");
-	//방향 검사
-
-	//테두리 검사
-	
+	if (!set_map(data, parse))
+		ft_error("fail to set map");
+	// 바닥, 천장 color 16진수 변환
 }

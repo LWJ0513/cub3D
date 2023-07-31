@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 22:03:42 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/22 02:37:42 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/31 17:51:53 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,12 @@ int	init_parse(t_parsing *parse)
 void	init_data(t_data *data)
 {
 	data->direction = 0;
-	data->x = 0;
-	data->y = 0;
+	data->pos_x = 0;
+	data->pos_y = 0;
+	data->dir_x = 0;
+	data->dir_y = 0;
+	data->move_speed = 0.1;
+	data->rot_speed = 0.1;
 	data->width = 0;
 	data->height = 0;
 }

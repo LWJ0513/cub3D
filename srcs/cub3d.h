@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/26 17:25:07 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/07/31 17:50:37 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,17 @@ typedef struct s_data {
 	int		*ceil_color;
 	int		*floor_color;
 	char	direction;
-	double	x;
-	double	y;
 	int		width;
 	int		height;
 	char	**map;
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+	double	move_speed;
+	double	rot_speed;
 }	t_data;
 
 typedef struct s_parsing {
