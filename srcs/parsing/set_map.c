@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:27:41 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/31 21:18:07 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/03 01:20:32 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	check_direction(t_data *data, char dir)
 		data->dir_y = 1;
 }
 
-int	init_player(t_data *data, t_parsing *parse)
+int	init_player(t_data *data)
 {
 	int	i;
 	int	j;
@@ -102,7 +102,7 @@ int	set_map(t_data *data, t_parsing *parse)
 	if (!alloc_map(data, parse))
 		return (0);
 	// 플레이어 위치 세팅
-	if (!init_player(data, parse))
+	if (!init_player(data))
 		return (0);
 	return (1);
 }

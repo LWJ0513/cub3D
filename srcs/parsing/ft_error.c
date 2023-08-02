@@ -6,11 +6,11 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:58:05 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/22 02:35:12 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/03 01:20:08 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	ft_error(char *msg)
 {
