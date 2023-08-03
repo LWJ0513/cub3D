@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/07/31 21:22:11 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/03 18:29:02 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_image {
 	int		line_length;
 	int		bpp;
 	int		endian;
-	int		*addr;
+	int		*buffer;
 	void	*img;
 }	t_image;
 

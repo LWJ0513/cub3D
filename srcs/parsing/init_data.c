@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 22:03:42 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/31 17:51:53 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:48:03 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	init_data(t_data *data)
 	data->pos_y = 0;
 	data->dir_x = 0;
 	data->dir_y = 0;
+	data->plane_x = 0;
+	data->plane_y = 0;
 	data->move_speed = 0.1;
 	data->rot_speed = 0.1;
 	data->width = 0;

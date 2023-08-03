@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:00:15 by sooyang           #+#    #+#             */
-/*   Updated: 2023/07/31 17:57:02 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/03 20:47:24 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	check_map(t_data *data, t_parsing *parsing, char *line)
 	data->height++;
 	parsing->is_empty = 1;
 	if (data->width < i)
-		data->width = 1;
+		data->width = i;
 	return (1);
 }
 
@@ -54,7 +54,6 @@ int	validate_map(t_data *data, t_parsing *parsing)
 	while (1)
 	{
 		line = get_next_line(parsing->fd);
-		printf("str = %s\n", line);
 		if (!line && parsing->is_empty == 0)
 			return (close_map(line, parsing->fd, 0));
 		if (line && parsing->is_empty == 1 && ft_strlen(line) == 1)
