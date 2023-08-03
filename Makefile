@@ -14,6 +14,9 @@ SRCS =  \
 	parsing/check_identifier.c \
 	parsing/validate_map.c \
 	parsing/set_map.c \
+	open_window.c \
+	key_press.c \
+	calc.c
 
 OBJS = $(MANDATORY:c=o)
 

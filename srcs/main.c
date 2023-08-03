@@ -16,6 +16,8 @@ int main(int argc, char **argv)
 {
 	t_data		data;
 	t_parsing	parse;
-
-	parsing(argc, argv, &data, &parse);
+  
+	// todo 구조체 초기화 (planeX, planeY 초기화)
+  parsing(argc, argv, &data, &parse);
+	open_window(&data);
 }

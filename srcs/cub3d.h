@@ -27,6 +27,13 @@
 # define F 4
 # define C 5 
 
+#define X_EVENT_KEY_PRESS 2
+#define KEY_W 13
+#define KEY_A 0
+#define KEY_S 1
+#define KEY_D 2
+#define KEY_ESC 53
+
 typedef struct s_image {
 	int		width;
 	int		heigth;
@@ -68,6 +75,26 @@ typedef struct s_parsing {
 	char	**image_path;
 }	t_parsing;
 
+typedef struct s_var
+{
+	double camera_x;	 // 카메라 평면
+	double raydir_x; // 광선의 방향 벡터
+	double raydir_y; // 광선의 방향 벡터
+	int map_x;
+	int map_y;
+	double side_x;
+	double side_y;
+	double delta_x;
+	double delta_y;
+	int step_x;	// x, y가 어느 방향으로 이동하는지(광선의 방향) -1 또는 +1
+	int step_y;
+
+	int side;// 벽의 x면 또는 y면이 맞았는지를 나타내는 변수 (x = 0 , y = 1)
+	double euclidean;
+	int draw_start;
+	int draw_end;
+} t_var;
+
 //error
 void	ft_error(char *msg);
 void	ft_free(char **list);
@@ -93,5 +120,15 @@ int		validate_map(t_data *data, t_parsing *parsing);
 
 //set_map
 int		set_map(t_data *data, t_parsing *parse);
+
+// 구현부
+void open_window(t_data *data);
+int key_press(int keycode, t_data *data);
+
+void set_value(t_data *d, t_var *v, int x);
+void set_value2(t_data *d, t_var *v, int x);
+void dda(t_data *d, t_var *v);
+void get_wall_area(t_data *d, t_var *v);
+void print_wall(t_data *d, t_var *v, int x);
 
 #endif
