@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/03 03:50:36 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/03 18:10:36 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ typedef struct s_var
 	int side;// 벽의 x면 또는 y면이 맞았는지를 나타내는 변수 (x = 0 , y = 1)
 	double euclidean;
 	int draw_start;
-	int draw_end
+	int draw_end;
 } t_var;
 
 

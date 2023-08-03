@@ -7,7 +7,10 @@ RM = rm -rf
 MANDATORY = $(addprefix srcs/, $(SRCS))
 
 SRCS =  \
-	main.c
+	main.c \
+	open_window.c \
+	key_press.c \
+	calc.c
 
 OBJS = $(MANDATORY:c=o)
 
