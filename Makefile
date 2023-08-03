@@ -1,4 +1,4 @@
-CC = cc
+CC = cc -g
 CFLAGS = -Wall -Werror -Wextra
 OPTION = -L./mlx -lmlx -framework OpenGL -framework AppKit
 NAME = cub3D
@@ -8,6 +8,12 @@ MANDATORY = $(addprefix srcs/, $(SRCS))
 
 SRCS =  \
 	main.c \
+	parsing/ft_error.c \
+	parsing/parsing.c \
+	parsing/init_data.c \
+	parsing/check_identifier.c \
+	parsing/validate_map.c \
+	parsing/set_map.c \
 	open_window.c \
 	key_press.c \
 	calc.c
