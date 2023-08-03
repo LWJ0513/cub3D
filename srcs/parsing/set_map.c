@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:27:41 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/03 20:52:11 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/03 21:00:01 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,8 @@ int	set_map(t_data *data, t_parsing *parse)
 	if (!alloc_map(data, parse))
 		return (0);
 	if (!init_player(data))
+		return (0);
+	if (!data->direction)
 		return (0);
 	return (1);
 }
