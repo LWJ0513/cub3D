@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_identifier.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 23:39:46 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/03 20:47:30 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/06 04:31:59 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_image(t_data *data, t_parsing *parse)
 		if (!data->images[i].img)
 			return (0);
 		data->images[i].buffer = (int *)mlx_get_data_addr(data->images[i].img, \
-		&data->images[i].bpp, &data->images[i].line_length, \
+		&data->images[i].bits_per_pixel, &data->images[i].size_line, \
 		&data->images[i].endian);
 		if (!data->images[i].buffer)
 			return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/03 18:29:02 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/06 04:35:54 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <math.h>
 
 # define NO 0
 # define SO 1
@@ -37,8 +38,8 @@
 typedef struct s_image {
 	int		width;
 	int		heigth;
-	int		line_length;
-	int		bpp;
+	int		size_line;
+	int		bits_per_pixel;
 	int		endian;
 	int		*buffer;
 	void	*img;
@@ -48,7 +49,7 @@ typedef struct s_data {
 	void	*mlx;
 	void	*win;
 	t_image	*images;
-	int		*ceil_color;
+	int		*ceil_color;	//??
 	int		*floor_color;
 	char	direction;
 	int		width;
@@ -63,6 +64,7 @@ typedef struct s_data {
 	double	plane_y;
 	double	move_speed;
 	double	rot_speed;
+	t_image image;
 }	t_data;
 
 typedef struct s_parsing {
@@ -126,7 +128,7 @@ void open_window(t_data *data);
 int key_press(int keycode, t_data *data);
 
 void set_value(t_data *d, t_var *v, int x);
-void set_value2(t_data *d, t_var *v, int x);
+void set_value2(t_data *d, t_var *v);
 void dda(t_data *d, t_var *v);
 void get_wall_area(t_data *d, t_var *v);
 void print_wall(t_data *d, t_var *v, int x);
