@@ -6,11 +6,11 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:32:19 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/03 03:37:56 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/06 04:36:38 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void set_value(t_data *d, t_var *v, int x)
 {
@@ -25,9 +25,8 @@ void set_value(t_data *d, t_var *v, int x)
 	v->delta_y = fabs(1 / v->raydir_y);
 }
 
-void set_value2(t_data *d, t_var *v, int x)
+void set_value2(t_data *d, t_var *v)
 {
-
 	if (v->raydir_x < 0)
 	{
 		v->step_x = -1;
@@ -91,22 +90,20 @@ void get_wall_area(t_data *d, t_var *v)
 		v->draw_end = d->height - 1;
 }
 
-void print_wall(t_data *d, t_var *v, int x)
+void print_wall(t_data *data, t_var *v, int x)
 {
 	int y;
-	
+
 	int color = 0x0000FF; // 파
 
-	// todo 벽 동서남북 구분해서 이미지를 출력해야 함 
-	if (v->side == 1)	
+	// todo 벽 동서남북 구분해서 이미지를 출력해야 함
+	if (v->side == 1)
 		color = color / 2;
-
 
 	y = v->draw_start;
 	while (y <= v->draw_end)
 	{
-		// todo 수정 
-		mlx_pixel_put(d->mlx, d->win, x, y, color);
+		data->image.buffer[x + y * data->width] = color;
 		y++;
 	}
 }

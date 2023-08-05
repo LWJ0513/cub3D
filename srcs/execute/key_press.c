@@ -6,11 +6,11 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:35:42 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/03 03:39:29 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/06 04:25:03 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 // todo 벽 뚫리는 버그 
 void press_ws(int keycode, t_data *d, char **map)
@@ -31,7 +31,7 @@ void press_ws(int keycode, t_data *d, char **map)
 	}
 }
 
-void press_ad(int keycode, t_data *d, char **map)
+void press_ad(int keycode, t_data *d)
 {
 	if (keycode == KEY_A)
 	{
@@ -56,7 +56,7 @@ void press_ad(int keycode, t_data *d, char **map)
 int key_press(int keycode, t_data *data)
 {
 	press_ws(keycode, data, data->map);
-	press_ad(keycode, data, data->map);
+	press_ad(keycode, data);
 
 	// todo free 안 해도 될지?
 	if (keycode == KEY_ESC)
