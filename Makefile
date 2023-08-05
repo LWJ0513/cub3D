@@ -1,24 +1,31 @@
-CC = cc -g
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 OPTION = -L./mlx -lmlx -framework OpenGL -framework AppKit
 NAME = cub3D
 RM = rm -rf
 
 MANDATORY = $(addprefix srcs/, $(SRCS))
+MANDATORY_PAR = $(addprefix srcs/parsing/, $(SRCS_PAR))
+MANDATORY_EXE = $(addprefix srcs/execute/, $(SRCS_EXE))
 
+SRCS_PAR = \
+	ft_error.c \
+	parsing.c \
+	init_data.c \
+	check_identifier.c \
+	validate_map.c \
+	set_map.c
+
+SRCS_EXE =  \
+	open_window.c \
+	key_press.c \
+	calc.c
+	
 SRCS =  \
-	main.c \
-	parsing/ft_error.c \
-	parsing/parsing.c \
-	parsing/init_data.c \
-	parsing/check_identifier.c \
-	parsing/validate_map.c \
-	parsing/set_map.c \
-	#open_window.c \
-	#key_press.c \
-	#calc.c\
+	main.c 
 
-OBJS = $(MANDATORY:c=o)
+
+OBJS = $(MANDATORY:c=o) $(MANDATORY_EXE:c=o) $(MANDATORY_PAR:c=o) $(MANDATORY:c=o)
 
 %.o : %c
 	$(CC) $(OPTION) $(CFLAGS) -c -o $@ $^
