@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:27:41 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/08 17:31:29 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/08 18:55:02 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,30 +62,6 @@ int	alloc_map(t_data *data, t_parsing *parse)
 	}
 	alloc_dup_map(data, parse, line);
 	return (1);
-}
-
-void	check_direction(t_data *data, char dir)
-{
-	if (dir == 'E')
-	{
-		data->dir_x = 1;
-		data->plane_y = 0.66;
-	}
-	else if (dir == 'W')
-	{
-		data->dir_x = -1;
-		data->plane_x = -0.66;
-	}
-	else if (dir == 'S')
-	{
-		data->dir_y = 1;
-		data->plane_y = -0.66;
-	}
-	else if (dir == 'N')
-	{
-		data->dir_y = -1;
-		data->plane_y = 0.66;
-	}
 }
 
 int	init_player_inner(t_data *data, int i, int j)
