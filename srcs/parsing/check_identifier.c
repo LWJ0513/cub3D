@@ -77,9 +77,9 @@ int	set_color(char **identifier, t_data *data, int check)
 			return (0);
 		}
 		if (check == F)
-			data->floor_color[i] = n;
+			data->rgb_floor_color[i] = n;
 		else if (check == C)
-			data->ceil_color[i] = n;
+			data->rgb_ceil_color[i] = n;
 	}
 	ft_free(color);
 	return (1);

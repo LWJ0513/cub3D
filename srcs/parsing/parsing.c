@@ -54,12 +54,12 @@ void	convert_color(t_data *data)
 	int	ceil_color;
 	int	floor_color;
 
-	ceil_color = data->ceil_color[0] << 16 | data->ceil_color[1] << 8 | \
-	data->ceil_color[2];
-	floor_color = data->floor_color[0] << 16 | data->floor_color[1] << 8 | \
-	data->floor_color[2];
-	(void)floor_color;
-	(void)ceil_color;
+	rgb_ceil_color = data->rgb_ceil_color[0] << 16 | data->rgb_ceil_color[1] << 8 | \
+	data->rgb_ceil_color_rgb[2];
+	rgb_floor_color = data->rgb_floor_color[0] << 16 | data->rgb_floor_color[1] << 8 | \
+	data->rgb_floor_color[2];
+	data->ceil_color = ceil_color;
+	data->floor_color = floor_color;
 }
 
 void	parsing(int argc, char **argv, t_data *data, t_parsing *parse)

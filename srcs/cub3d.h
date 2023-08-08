@@ -49,8 +49,10 @@ typedef struct s_data {
 	void	*mlx;
 	void	*win;
 	t_image	*images;
-	int		*ceil_color;	//??
-	int		*floor_color;
+	int		*rgb_ceil_color;
+	int		*rgb_floor_color;
+	int     ceil_color;
+	int     floor_color;
 	char	direction;
 	int		width;
 	int		height;
