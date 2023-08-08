@@ -19,7 +19,8 @@ SRCS_PAR = \
 SRCS_EXE =  \
 	open_window.c \
 	key_press.c \
-	calc.c
+	calc.c \
+	wall.c
 	
 SRCS =  \
 	main.c 

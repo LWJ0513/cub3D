@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 01:47:18 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/06 04:36:58 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 17:45:26 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,16 @@ void calc(t_data *d)
 	{
 		set_value(d, &v, x);
 		set_value2(d, &v);
-
 		dda(d, &v);
-
 		get_wall_area(d, &v);
-		print_wall(d, &v, x);
-
+		if (v.side == 0 && v.raydir_x > 0)
+			draw_wall(WE, v, d, x);
+		else if (v.side == 1 && v.raydir_y < 0)
+			draw_wall(SO, v, d, x);
+		else if (v.side == 0 && v.raydir_x <= 0)
+			draw_wall(EA, v, d, x);
+		else
+			draw_wall(NO, v, d, x);
 		x++;
 	}
 }
@@ -56,7 +60,7 @@ int main_loop(t_data *data)
 {
 	paint_cf(data);
 	calc(data);
-
+	mlx_put_image_to_window(data->mlx, data->win, data->image.img, 0, 0);
 	return (0);
 }
 
