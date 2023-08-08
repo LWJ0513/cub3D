@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/06 04:35:54 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 17:44:39 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 
 typedef struct s_image {
 	int		width;
-	int		heigth;
+	int		height;
 	int		size_line;
 	int		bits_per_pixel;
 	int		endian;
@@ -79,20 +79,21 @@ typedef struct s_parsing {
 
 typedef struct s_var
 {
-	double camera_x;	 // 카메라 평면
-	double raydir_x; // 광선의 방향 벡터
-	double raydir_y; // 광선의 방향 벡터
+	double camera_x;
+	double raydir_x;
+	double raydir_y;
 	int map_x;
 	int map_y;
 	double side_x;
 	double side_y;
 	double delta_x;
 	double delta_y;
-	int step_x;	// x, y가 어느 방향으로 이동하는지(광선의 방향) -1 또는 +1
+	int step_x;
 	int step_y;
 
-	int side;// 벽의 x면 또는 y면이 맞았는지를 나타내는 변수 (x = 0 , y = 1)
-	double euclidean;
+	int side;
+	double perp_wall_dist;
+	int wall_height;
 	int draw_start;
 	int draw_end;
 } t_var;
@@ -132,5 +133,7 @@ void set_value2(t_data *d, t_var *v);
 void dda(t_data *d, t_var *v);
 void get_wall_area(t_data *d, t_var *v);
 void print_wall(t_data *d, t_var *v, int x);
+void get_wall_area(t_data *d, t_var *v);
+void draw_wall(int direction, t_var v, t_data *d, int x);
 
 #endif

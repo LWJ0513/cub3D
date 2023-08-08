@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:32:19 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/06 04:36:38 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 17:44:15 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,38 +72,7 @@ void dda(t_data *d, t_var *v)
 			hit = 1;
 	}
 	if (v->side == 0)
-		v->euclidean = (v->side_x - v->delta_x);
+		v->perp_wall_dist = (v->side_x - v->delta_x);
 	else
-		v->euclidean = (v->side_y - v->delta_y);
-}
-
-void get_wall_area(t_data *d, t_var *v)
-{
-	int wall_height;
-
-	wall_height = (int)(d->height / v->euclidean);
-	v->draw_start = -wall_height / 2 + d->height / 2;
-	if (v->draw_start < 0)
-		v->draw_start = 0;
-	v->draw_end = wall_height / 2 + d->height / 2;
-	if (v->draw_end >= d->height)
-		v->draw_end = d->height - 1;
-}
-
-void print_wall(t_data *data, t_var *v, int x)
-{
-	int y;
-
-	int color = 0x0000FF; // 파
-
-	// todo 벽 동서남북 구분해서 이미지를 출력해야 함
-	if (v->side == 1)
-		color = color / 2;
-
-	y = v->draw_start;
-	while (y <= v->draw_end)
-	{
-		data->image.buffer[x + y * data->width] = color;
-		y++;
-	}
+		v->perp_wall_dist = (v->side_y - v->delta_y);
 }
