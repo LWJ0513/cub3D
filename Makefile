@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 OPTION = -L./mlx -lmlx -framework OpenGL -framework AppKit
 NAME = cub3D
 RM = rm -rf

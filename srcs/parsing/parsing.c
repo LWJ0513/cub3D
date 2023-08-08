@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sooyang <sooyang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:30:40 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/08 18:53:35 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/08 20:34:58 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,5 @@ void	parsing(int argc, char **argv, t_data *data, t_parsing *parse)
 		ft_error("fail to load map");
 	if (!set_map(data, parse))
 		ft_error("fail to set map");
+	convert_color(data);
 }
