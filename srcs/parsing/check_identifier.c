@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 23:39:46 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/06 04:31:59 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 17:46:55 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_image(t_data *data, t_parsing *parse)
 	while (++i < 4)
 	{
 		data->images[i].img = mlx_xpm_file_to_image(data->mlx, \
-		parse->image_path[i], &data->images[i].width, &data->images[i].heigth);
+		parse->image_path[i], &data->images[i].width, &data->images[i].height);
 		if (!data->images[i].img)
 			return (0);
 		data->images[i].buffer = (int *)mlx_get_data_addr(data->images[i].img, \
