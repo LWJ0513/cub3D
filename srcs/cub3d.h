@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/08 17:44:39 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/06 04:35:54 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ int		is_three_word(char *line);
 
 //parsing
 void	arg_n_init(int argc, char **argv, t_data *data, t_parsing *parse);
+void	check_direction(t_data *data, char dir);
 void	parsing(int argc, char **argv, t_data *data, t_parsing *parse);
 
 //init_data

@@ -14,7 +14,7 @@ SRCS_PAR = \
 	init_data.c \
 	check_identifier.c \
 	validate_map.c \
-	set_map.c
+	set_map.c\
 
 SRCS_EXE =  \
 	open_window.c \

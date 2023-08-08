@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:27:41 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/03 21:00:01 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:31:29 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,28 @@ void	check_direction(t_data *data, char dir)
 	}
 }
 
+int	init_player_inner(t_data *data, int i, int j)
+{
+	if (data->map[i][j] == '0' || data->map[i][j] == data->direction)
+	{
+		if (j <= 0 || i <= 0 || j >= data->width - 1 || \
+			i >= data->height - 1)
+			return (0);
+		else if (data->map[i][j - 1] == ' ' || \
+		data->map[i][j + 1] == ' ' \
+		|| data->map[i - 1][j] == ' ' || data->map[i + 1][j] == ' ')
+			return (0);
+	}
+	if (data->map[i][j] == 'N' || data->map[i][j] == 'W' ||
+		data->map[i][j] == 'E' || data->map[i][j] == 'S')
+	{
+		check_direction(data, data->map[i][j]);
+		data->pos_x = j + 0.5;
+		data->pos_y = i + 0.5;
+	}
+	return (1);
+}
+
 int	init_player(t_data *data)
 {
 	int	i;
@@ -99,23 +121,8 @@ int	init_player(t_data *data)
 		j = -1;
 		while (++j < data->width)
 		{
-			if (data->map[i][j] == '0' || data->map[i][j] == data->direction)
-			{
-				if (j <= 0 || i <= 0 || j >= data->width - 1 || \
-					i >= data->height - 1)
-					return (0);
-				else if (data->map[i][j - 1] == ' ' || \
-				data->map[i][j + 1] == ' ' \
-				|| data->map[i - 1][j] == ' ' || data->map[i + 1][j] == ' ')
-					return (0);
-			}
-			if (data->map[i][j] == 'N' || data->map[i][j] == 'W' ||
-				data->map[i][j] == 'E' || data->map[i][j] == 'S')
-			{
-				check_direction(data, data->map[i][j]);
-				data->pos_x = j + 0.5;
-				data->pos_y = i + 0.5;
-			}
+			if (!init_player_inner(data, i, j))
+				return (0);
 		}
 	}
 	return (1);
