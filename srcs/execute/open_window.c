@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 01:47:18 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/08 18:37:19 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 20:42:17 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void paint_cf(t_data *data)
 		j = 0;
 		while (j < data->height / 2)
 		{
-			data->image.buffer[i + j * data->width] = *data->ceil_color;
-			data->image.buffer[i + (j + data->height / 2) * data->width] = *data->floor_color;
+			data->image.buffer[i + j * data->width] = data->ceil_color;
+			data->image.buffer[i + (j + data->height / 2) * data->width] = data->floor_color;
 
 			j++;
 		}

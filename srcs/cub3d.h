@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/06 04:35:54 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 18:51:16 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@
 # define F 4
 # define C 5 
 
-#define X_EVENT_KEY_PRESS 2
-#define KEY_W 13
-#define KEY_A 0
-#define KEY_S 1
-#define KEY_D 2
-#define KEY_ESC 53
+# define X_EVENT_KEY_PRESS 2
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_ESC 53
 
 typedef struct s_image {
 	int		width;
@@ -51,8 +51,8 @@ typedef struct s_data {
 	t_image	*images;
 	int		*rgb_ceil_color;
 	int		*rgb_floor_color;
-	int     ceil_color;
-	int     floor_color;
+	int		ceil_color;
+	int		floor_color;
 	char	direction;
 	int		width;
 	int		height;
@@ -66,7 +66,7 @@ typedef struct s_data {
 	double	plane_y;
 	double	move_speed;
 	double	rot_speed;
-	t_image image;
+	t_image	image;
 }	t_data;
 
 typedef struct s_parsing {
@@ -81,24 +81,24 @@ typedef struct s_parsing {
 
 typedef struct s_var
 {
-	double camera_x;
-	double raydir_x;
-	double raydir_y;
-	int map_x;
-	int map_y;
-	double side_x;
-	double side_y;
-	double delta_x;
-	double delta_y;
-	int step_x;
-	int step_y;
+	double	camera_x;
+	double	raydir_x;
+	double	raydir_y;
+	int		map_x;
+	int		map_y;
+	double	side_x;
+	double	side_y;
+	double	delta_x;
+	double	delta_y;
+	int		step_x;
+	int		step_y;
 
-	int side;
-	double perp_wall_dist;
-	int wall_height;
-	int draw_start;
-	int draw_end;
-} t_var;
+	int		side;
+	double	perp_wall_dist;
+	int		wall_height;
+	int		draw_start;
+	int		draw_end;
+}	t_var;
 
 //error
 void	ft_error(char *msg);
@@ -128,15 +128,15 @@ int		validate_map(t_data *data, t_parsing *parsing);
 int		set_map(t_data *data, t_parsing *parse);
 
 // 구현부
-void open_window(t_data *data);
-int key_press(int keycode, t_data *data);
+void	open_window(t_data *data);
+int		key_press(int keycode, t_data *data);
 
-void set_value(t_data *d, t_var *v, int x);
-void set_value2(t_data *d, t_var *v);
-void dda(t_data *d, t_var *v);
-void get_wall_area(t_data *d, t_var *v);
-void print_wall(t_data *d, t_var *v, int x);
-void get_wall_area(t_data *d, t_var *v);
-void draw_wall(int direction, t_var v, t_data *d, int x);
+void	set_value(t_data *d, t_var *v, int x);
+void	set_value2(t_data *d, t_var *v);
+void	dda(t_data *d, t_var *v);
+void	get_wall_area(t_data *d, t_var *v);
+void	print_wall(t_data *d, t_var *v, int x);
+void	get_wall_area(t_data *d, t_var *v);
+void	draw_wall(int direction, t_var v, t_data *d, int x);
 
 #endif
