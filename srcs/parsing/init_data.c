@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 22:03:42 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/03 17:48:03 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/08 21:45:32 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	init_data(t_data *data)
 	data->dir_y = 0;
 	data->plane_x = 0;
 	data->plane_y = 0;
-	data->move_speed = 0.1;
+	data->move_speed = 0.2;
 	data->rot_speed = 0.1;
 	data->width = 0;
 	data->height = 0;

@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/08 18:51:16 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 21:13:32 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <stdlib.h>
 # include <math.h>
 
+# define WID 640
+# define HEI 480
 # define NO 0
 # define SO 1
 # define WE 2
@@ -79,26 +81,37 @@ typedef struct s_parsing {
 	char	**image_path;
 }	t_parsing;
 
-typedef struct s_var
-{
-	double	camera_x;
-	double	raydir_x;
-	double	raydir_y;
-	int		map_x;
-	int		map_y;
-	double	side_x;
-	double	side_y;
-	double	delta_x;
-	double	delta_y;
-	int		step_x;
-	int		step_y;
+// typedef struct s_var
+// {
+// 	double	camera_x;
+// 	double	raydir_x;
+// 	double	raydir_y;
+// 	int		map_x;
+// 	int		map_y;
+// 	double	side_x;
+// 	double	side_y;
+// 	double	delta_x;
+// 	double	delta_y;
+// 	int		step_x;
+// 	int		step_y;
 
-	int		side;
-	double	perp_wall_dist;
-	int		wall_height;
-	int		draw_start;
-	int		draw_end;
-}	t_var;
+// 	int		side;
+// 	double	perp_wall_dist;
+// 	int		wall_height;
+// 	int		draw_start;
+// 	int		draw_end;
+// }	t_var;
+
+typedef struct var
+{
+	double wallX;
+	int side;
+	double rayDirX;
+	double rayDirY;
+	int lineHeight;
+	int drawStart;
+	int drawEnd;
+} t_var;
 
 //error
 void	ft_error(char *msg);
@@ -131,12 +144,12 @@ int		set_map(t_data *data, t_parsing *parse);
 void	open_window(t_data *data);
 int		key_press(int keycode, t_data *data);
 
-void	set_value(t_data *d, t_var *v, int x);
-void	set_value2(t_data *d, t_var *v);
-void	dda(t_data *d, t_var *v);
-void	get_wall_area(t_data *d, t_var *v);
-void	print_wall(t_data *d, t_var *v, int x);
-void	get_wall_area(t_data *d, t_var *v);
-void	draw_wall(int direction, t_var v, t_data *d, int x);
+// void	set_value(t_data *d, t_var *v, int x);
+// void	set_value2(t_data *d, t_var *v);
+// void	dda(t_data *d, t_var *v);
+// void	get_wall_area(t_data *d, t_var *v);
+// void	print_wall(t_data *d, t_var *v, int x);
+// void	get_wall_area(t_data *d, t_var *v);
+// void	draw_wall(int direction, t_var v, t_data *d, int x);
 
 #endif

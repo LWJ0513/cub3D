@@ -6,27 +6,26 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:35:42 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/06 04:25:03 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 21:51:35 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-// todo 벽 뚫리는 버그 
 void press_ws(int keycode, t_data *d, char **map)
 {
 	if (keycode == KEY_W)
 	{
-		if (!map[(int)(d->pos_x + d->dir_x * d->move_speed)][(int)(d->pos_y)])
+		if (map[(int)(d->pos_y)][(int)(d->pos_x + d->dir_x * d->move_speed)] != '1')
 			d->pos_x += d->dir_x * d->move_speed;
-		if (!map[(int)(d->pos_x)][(int)(d->pos_y + d->dir_y * d->move_speed)])
+		if (map[(int)(d->pos_y + d->dir_y * d->move_speed)][(int)(d->pos_x)] != '1')
 			d->pos_y += d->dir_y * d->move_speed;
 	}
 	if (keycode == KEY_S)
 	{
-		if (!map[(int)(d->pos_x - d->dir_x * d->move_speed)][(int)(d->pos_y)])
+		if (map[(int)(d->pos_y)][(int)(d->pos_x - d->dir_x * d->move_speed)] != '1')
 			d->pos_x -= d->dir_x * d->move_speed;
-		if (!map[(int)(d->pos_x)][(int)(d->pos_y - d->dir_y * d->move_speed)])
+		if (map[(int)(d->pos_y - d->dir_y * d->move_speed)][(int)(d->pos_x)] != '1')
 			d->pos_y -= d->dir_y * d->move_speed;
 	}
 }
@@ -58,8 +57,10 @@ int key_press(int keycode, t_data *data)
 	press_ws(keycode, data, data->map);
 	press_ad(keycode, data);
 
-	// todo free 안 해도 될지?
 	if (keycode == KEY_ESC)
+	{
+		mlx_destroy_window(data->mlx, data->win);
 		exit(0);
+	}
 	return (0);
 }

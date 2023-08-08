@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:48 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/08 18:49:00 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/08 22:03:12 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,4 @@ int	main(int argc, char **argv)
 
 	parsing(argc, argv, &data, &parse);
 	open_window(&data);
-	// mlx_destroy_image(data.mlx, data.image.img);
 }
