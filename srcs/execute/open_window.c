@@ -23,8 +23,8 @@ void paint_cf(t_data *data)
 		j = 0;
 		while (j < data->height / 2)
 		{
-			data->image.buffer[i + j * data->width] = data->ceil_color;
-			data->image.buffer[i + (j + data->height / 2) * data->width] = data->floor_color;
+			data->image.buffer[i + j * data->width] = *data->ceil_color;
+			data->image.buffer[i + (j + data->height / 2) * data->width] = *data->floor_color;
 
 			j++;
 		}

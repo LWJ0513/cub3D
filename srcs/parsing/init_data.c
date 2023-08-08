@@ -63,23 +63,25 @@ void	init_data(t_data *data)
 	data->rot_speed = 0.1;
 	data->width = 0;
 	data->height = 0;
+	data->ceil_color = 0;
+	data->floor_color = 0;
 }
 
 int	alloc_data(t_data *data, t_parsing *parse)
 {
-	data->ceil_color = (int *)malloc(sizeof(int) * 3);
-	if (!data->ceil_color)
+	data->rgb_ceil_color = (int *)malloc(sizeof(int) * 3);
+	if (!data->rgb_ceil_color)
 	{
 		free(parse->identifier_list);
 		free(parse->image_path);
 		return (0);
 	}
-	data->floor_color = (int *)malloc(sizeof(int) * 3);
-	if (!data->floor_color)
+	data->rgb_floor_color = (int *)malloc(sizeof(int) * 3);
+	if (!data->rgb_floor_color)
 	{
 		free(parse->identifier_list);
 		free(parse->image_path);
-		free(data->ceil_color);
+		free(data->rgb_ceil_color);
 		return (0);
 	}
 	data->images = (t_image *)malloc(sizeof(t_image) * 4);
@@ -87,8 +89,8 @@ int	alloc_data(t_data *data, t_parsing *parse)
 	{
 		free(parse->identifier_list);
 		free(parse->image_path);
-		free(data->ceil_color);
-		free(data->floor_color);
+		free(data->rgb_ceil_color);
+		free(data->rgb_floor_color);
 		return (0);
 	}
 	return (1);
