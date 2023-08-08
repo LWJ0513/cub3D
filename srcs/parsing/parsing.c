@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:30:40 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/08 18:25:43 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/08 18:53:35 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ void	convert_color(t_data *data)
 	int	ceil_color;
 	int	floor_color;
 
-	rgb_ceil_color = data->rgb_ceil_color[0] << 16 | data->rgb_ceil_color[1] << 8 | \
-	data->rgb_ceil_color_rgb[2];
-	rgb_floor_color = data->rgb_floor_color[0] << 16 | data->rgb_floor_color[1] << 8 | \
-	data->rgb_floor_color[2];
+	ceil_color = data->rgb_ceil_color[0] << 16 | data->rgb_ceil_color[1] << 8 | \
+	data->rgb_ceil_color[2];
+	floor_color = data->rgb_floor_color[0] << 16 | \
+	data->rgb_floor_color[1] << 8 | data->rgb_floor_color[2];
 	data->ceil_color = ceil_color;
 	data->floor_color = floor_color;
 }
