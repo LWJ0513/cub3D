@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sooyang <sooyang@student.42.fr>            +#+  +:+       +#+        */
+/*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:30:40 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/08 20:34:58 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/11 23:58:06 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ void	check_direction(t_data *data, char dir)
 	else if (dir == 'S')
 	{
 		data->dir_y = 1;
-		data->plane_y = -0.66;
+		data->plane_x = -0.66;
 	}
 	else if (dir == 'N')
 	{
 		data->dir_y = -1;
-		data->plane_y = 0.66;
+		data->plane_x = 0.66;
 	}
 }
 
