@@ -6,13 +6,13 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:35:42 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/15 16:14:45 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/15 16:16:08 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void press_ws(int keycode, t_data *d, char **map)
+void	press_ws(int keycode, t_data *d, char **map)
 {
 	if (keycode == KEY_W)
 	{
@@ -30,7 +30,7 @@ void press_ws(int keycode, t_data *d, char **map)
 	}
 }
 
-void press_ad(int keycode, t_data *d, char **map)
+void	press_ad(int keycode, t_data *d, char **map)
 {
 	if (keycode == KEY_A)
 	{
@@ -48,7 +48,7 @@ void press_ad(int keycode, t_data *d, char **map)
 	}
 }
 
-void press_arrow(int keycode, t_data *d)
+void	press_arrow(int keycode, t_data *d)
 {
 	if (keycode == K_AR_L)
 	{
@@ -70,7 +70,7 @@ void press_arrow(int keycode, t_data *d)
 	}
 }
 
-int key_press(int keycode, t_data *data)
+int	key_press(int keycode, t_data *data)
 {
 	press_ws(keycode, data, data->map);
 	press_ad(keycode, data, data->map);
