@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/13 02:45:12 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/15 14:02:00 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@
 #define KEY_A 0
 #define KEY_S 1
 #define KEY_D 2
+# define K_AR_L 123
+# define K_AR_R 124
 #define KEY_ESC 53
 
 typedef struct s_image

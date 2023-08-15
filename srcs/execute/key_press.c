@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:35:42 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/08 21:51:35 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/15 14:25:28 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void press_ws(int keycode, t_data *d, char **map)
 	}
 }
 
-void press_ad(int keycode, t_data *d)
+void press_arrow(int keycode, t_data *d)
 {
-	if (keycode == KEY_A)
+	if (keycode == K_AR_L)
 	{
 		double olddir_x = d->dir_x;
 		d->dir_x = d->dir_x * cos(-d->rot_speed) - d->dir_y * sin(-d->rot_speed);
@@ -41,7 +41,7 @@ void press_ad(int keycode, t_data *d)
 		d->plane_x = d->plane_x * cos(-d->rot_speed) - d->plane_y * sin(-d->rot_speed);
 		d->plane_y = oldplane_x * sin(-d->rot_speed) + d->plane_y * cos(-d->rot_speed);
 	}
-	if (keycode == KEY_D)
+	if (keycode == K_AR_R)
 	{
 		double olddir_x = d->dir_x;
 		d->dir_x = d->dir_x * cos(d->rot_speed) - d->dir_y * sin(d->rot_speed);
@@ -55,7 +55,7 @@ void press_ad(int keycode, t_data *d)
 int key_press(int keycode, t_data *data)
 {
 	press_ws(keycode, data, data->map);
-	press_ad(keycode, data);
+	press_arrow(keycode, data);
 
 	if (keycode == KEY_ESC)
 	{
