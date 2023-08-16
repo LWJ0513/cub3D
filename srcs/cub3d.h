@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/15 14:02:00 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/16 18:24:52 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,8 @@ typedef struct s_parsing
 
 typedef struct s_var
 {
-	double camera_x;
+	// double camera_x;
+	
 	double raydir_x;
 	double raydir_y;
 	int map_x;
@@ -141,12 +142,11 @@ int set_map(t_data *data, t_parsing *parse);
 void open_window(t_data *data);
 int key_press(int keycode, t_data *data);
 
-// void	set_value(t_data *d, t_var *v, int x);
-// void	set_value2(t_data *d, t_var *v);
-// void	dda(t_data *d, t_var *v);
-// void	get_wall_area(t_data *d, t_var *v);
-// void	print_wall(t_data *d, t_var *v, int x);
-// void	get_wall_area(t_data *d, t_var *v);
-// void	draw_wall(int direction, t_var v, t_data *d, int x);
+void	set_value(t_data *d, t_var *v, int x);
+void	set_value2(t_data *d, t_var *v);
+void	dda(t_data *d, t_var *v);
+void	get_wall_area(t_var *v);
+void	print_wall(t_data *d, t_var *v, int x);
+void	draw_wall(int direction, t_var v, t_data *d, int x);
 
 #endif
