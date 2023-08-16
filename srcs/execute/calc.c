@@ -6,28 +6,26 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:32:19 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/16 18:50:34 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/16 18:53:11 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void set_value(t_data *d, t_var *v, int x)
+void	set_value(t_data *d, t_var *v, int x)
 {
-	double camera_x;
+	double	camera_x;
 
 	camera_x = 2 * x / (double)WID - 1;
 	v->raydir_x = d->dir_x + d->plane_x * camera_x;
 	v->raydir_y = d->dir_y + d->plane_y * camera_x;
-
 	v->map_x = (int)d->pos_x;
 	v->map_y = (int)d->pos_y;
-
 	v->delta_dist_x = fabs(1 / v->raydir_x);
 	v->delta_dist_y = fabs(1 / v->raydir_y);
 }
 
-void set_value2(t_data *d, t_var *v)
+void	set_value2(t_data *d, t_var *v)
 {
 	if (v->raydir_x < 0)
 	{
@@ -51,9 +49,9 @@ void set_value2(t_data *d, t_var *v)
 	}
 }
 
-void dda(t_data *d, t_var *v)
+void	dda(t_data *d, t_var *v)
 {
-	int hit;
+	int	hit;
 
 	hit = 0;
 	while (hit == 0)
