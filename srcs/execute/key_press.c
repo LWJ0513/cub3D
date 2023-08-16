@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:35:42 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/16 19:22:08 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/16 19:26:36 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,14 @@ void	press_left_arrow(int keycode, t_data *d)
 	{
 		olddir_x = d->dir_x;
 		d->dir_x = \
-					d->dir_x * cos(d->rot_speed) - d->dir_y * sin(d->rot_speed);
+				d->dir_x * cos(-d->rot_speed) - d->dir_y * sin(-d->rot_speed);
 		d->dir_y = \
-					olddir_x * sin(d->rot_speed) + d->dir_y * cos(d->rot_speed);
+				olddir_x * sin(-d->rot_speed) + d->dir_y * cos(-d->rot_speed);
 		oldplane_x = d->plane_x;
 		d->plane_x = \
-				d->plane_x * cos(d->rot_speed) - d->plane_y * sin(d->rot_speed);
+			d->plane_x * cos(-d->rot_speed) - d->plane_y * sin(-d->rot_speed);
 		d->plane_y = \
-				oldplane_x * sin(d->rot_speed) + d->plane_y * cos(d->rot_speed);
+			oldplane_x * sin(-d->rot_speed) + d->plane_y * cos(-d->rot_speed);
 	}
 }
 
