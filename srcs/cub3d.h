@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 21:16:45 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/16 19:15:16 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/16 22:28:13 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,10 @@ void	ft_error(char *msg);
 void	ft_free(char **list);
 int		is_two_word(char *line);
 int		is_three_word(char *line);
+
+// ft_free
+void	ft_free_parse(t_parsing *parse);
+void	ft_free_data(t_data *data);
 
 // parsing
 void	arg_n_init(int argc, char **argv, t_data *data, t_parsing *parse);

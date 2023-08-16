@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:30:40 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/11 23:58:06 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/16 22:22:02 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ void	parsing(int argc, char **argv, t_data *data, t_parsing *parse)
 	if (!set_map(data, parse))
 		ft_error("fail to set map");
 	convert_color(data);
+	free_parse(parse);
 }
