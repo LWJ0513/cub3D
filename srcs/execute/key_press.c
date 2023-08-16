@@ -6,7 +6,7 @@
 /*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:35:42 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/16 19:26:36 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/16 19:27:27 by wonlim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	press_left_arrow(int keycode, t_data *d)
 	double	olddir_x;
 	double	oldplane_x;
 
-	if (keycode == K_ARROW_RIGHT)
+	if (keycode == K_ARROW_LEFT)
 	{
 		olddir_x = d->dir_x;
 		d->dir_x = \
