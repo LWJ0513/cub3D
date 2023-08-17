@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_press.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wonlim <wonlim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 03:35:42 by wonlim            #+#    #+#             */
-/*   Updated: 2023/08/16 19:27:27 by wonlim           ###   ########.fr       */
+/*   Updated: 2023/08/17 13:57:04 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ int	key_press(int keycode, t_data *data)
 	press_right_arrow(keycode, data);
 	if (keycode == KEY_ESC)
 	{
+		ft_free_data(data);
 		mlx_destroy_window(data->mlx, data->win);
 		exit(0);
 	}

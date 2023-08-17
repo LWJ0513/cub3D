@@ -6,7 +6,7 @@
 /*   By: sooyang <sooyang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:30:40 by sooyang           #+#    #+#             */
-/*   Updated: 2023/08/16 22:22:02 by sooyang          ###   ########.fr       */
+/*   Updated: 2023/08/17 13:56:05 by sooyang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,5 @@ void	parsing(int argc, char **argv, t_data *data, t_parsing *parse)
 	if (!set_map(data, parse))
 		ft_error("fail to set map");
 	convert_color(data);
-	free_parse(parse);
+	ft_free_parse(parse);
 }
